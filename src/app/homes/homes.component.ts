@@ -6,6 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './homes.component.html'
 })
 export class HomesComponent implements OnInit {
+  homeTypeDropdownOpen = false;
   homes$ = this.dataService.getHomes();
 
   constructor(private dataService: DataService) {}
