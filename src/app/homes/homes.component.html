@@ -1,3 +1,26 @@
-<pre>
+<!-- <pre>
   {{ homes$ | async | json }}
-</pre>
+</pre> -->
+
+<div class="uk-container uk-padding">
+  <h1>Homes</h1>
+  <div uk-grid class="uk-child-width-1-3@s uk-grid-match">
+    <div *ngFor="let home of homes$ | async">
+      <div class="uk-card">
+        <div class="uk-card-media-top">
+          <img src="{{ home.image_url }}" alt="" />
+        </div>
+        <div class="uk-card-body uk-padding-remove">
+          <div
+            class="uk-text-muted uk-text-uppercase uk-text-small uk-text-bold"
+          >
+            {{ home.type }} / {{ home.location }}
+          </div>
+          <div class="uk-text-bold uk-text-truncate">
+            {{ home.title }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
